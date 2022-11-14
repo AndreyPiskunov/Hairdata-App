@@ -6,14 +6,19 @@
 //
 
 import UIKit
+//import CoreData
 
 class EventListViewController: UIViewController {
+    
+//    private let coreDataManager = CoreDataManager()
     
 //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
+//        coreDataManager.saveEvent(name: "Autumn", date: Date(), image: UIImage(imageLiteralResourceName: "Image"))
+//        print(coreDataManager.fetchEvents())
     }
 //MARK: - Methods
 
