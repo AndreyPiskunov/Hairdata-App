@@ -18,6 +18,11 @@
 		CE82823B29224349008D41F2 /* AppColors+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82823A29224349008D41F2 /* AppColors+Extensions.swift */; };
 		CE82824029225A90008D41F2 /* WorkEventsData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE82823E29225A90008D41F2 /* WorkEventsData.xcdatamodeld */; };
 		CE82824229226B1B008D41F2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82824129226B1B008D41F2 /* CoreDataManager.swift */; };
+		CE828244292287E7008D41F2 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE828243292287E7008D41F2 /* EventListViewModel.swift */; };
+		CE82824629228C01008D41F2 /* AddEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82824529228C01008D41F2 /* AddEventCoordinator.swift */; };
+		CE8282482923A0AB008D41F2 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8282472923A0AB008D41F2 /* AddEventViewController.swift */; };
+		CE82824B2923A1E8008D41F2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82824A2923A1E8008D41F2 /* UIViewController+Extensions.swift */; };
+		CE82824D2923A418008D41F2 /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82824C2923A418008D41F2 /* AddEventViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		CE82823A29224349008D41F2 /* AppColors+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppColors+Extensions.swift"; sourceTree = "<group>"; };
 		CE82823F29225A90008D41F2 /* WorkEventsData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkEventsData.xcdatamodel; sourceTree = "<group>"; };
 		CE82824129226B1B008D41F2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CE828243292287E7008D41F2 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
+		CE82824529228C01008D41F2 /* AddEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventCoordinator.swift; sourceTree = "<group>"; };
+		CE8282472923A0AB008D41F2 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		CE82824A2923A1E8008D41F2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		CE82824C2923A418008D41F2 /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +78,12 @@
 			children = (
 				CE82821E29222BD1008D41F2 /* AppDelegate.swift */,
 				CE82822029222BD1008D41F2 /* SceneDelegate.swift */,
-				CE82823A29224349008D41F2 /* AppColors+Extensions.swift */,
+				CE82824E2923DF06008D41F2 /* ViewModels */,
+				CE8282492923A1A6008D41F2 /* Extensions */,
 				CE82823C29225974008D41F2 /* Controllers */,
 				CE82823D2922598D008D41F2 /* Coordinators */,
 				CE82822429222BD1008D41F2 /* Main.storyboard */,
+				CE82824129226B1B008D41F2 /* CoreDataManager.swift */,
 				CE82822729222BD3008D41F2 /* Assets.xcassets */,
 				CE82822929222BD3008D41F2 /* LaunchScreen.storyboard */,
 				CE82822C29222BD3008D41F2 /* Info.plist */,
@@ -84,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				CE82823829223662008D41F2 /* EventListViewController.swift */,
-				CE82824129226B1B008D41F2 /* CoreDataManager.swift */,
+				CE8282472923A0AB008D41F2 /* AddEventViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -94,8 +106,27 @@
 			children = (
 				CE82823229222D02008D41F2 /* AppCoordinator.swift */,
 				CE8282342922339D008D41F2 /* EventListCoordinator.swift */,
+				CE82824529228C01008D41F2 /* AddEventCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		CE8282492923A1A6008D41F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE82823A29224349008D41F2 /* AppColors+Extensions.swift */,
+				CE82824A2923A1E8008D41F2 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE82824E2923DF06008D41F2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CE828243292287E7008D41F2 /* EventListViewModel.swift */,
+				CE82824C2923A418008D41F2 /* AddEventViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,9 +203,14 @@
 				CE82823329222D02008D41F2 /* AppCoordinator.swift in Sources */,
 				CE82824029225A90008D41F2 /* WorkEventsData.xcdatamodeld in Sources */,
 				CE82823B29224349008D41F2 /* AppColors+Extensions.swift in Sources */,
+				CE82824D2923A418008D41F2 /* AddEventViewModel.swift in Sources */,
 				CE82823929223662008D41F2 /* EventListViewController.swift in Sources */,
+				CE82824B2923A1E8008D41F2 /* UIViewController+Extensions.swift in Sources */,
 				CE82821F29222BD1008D41F2 /* AppDelegate.swift in Sources */,
+				CE82824629228C01008D41F2 /* AddEventCoordinator.swift in Sources */,
 				CE82822129222BD1008D41F2 /* SceneDelegate.swift in Sources */,
+				CE8282482923A0AB008D41F2 /* AddEventViewController.swift in Sources */,
+				CE828244292287E7008D41F2 /* EventListViewModel.swift in Sources */,
 				CE82824229226B1B008D41F2 /* CoreDataManager.swift in Sources */,
 				CE8282352922339D008D41F2 /* EventListCoordinator.swift in Sources */,
 			);

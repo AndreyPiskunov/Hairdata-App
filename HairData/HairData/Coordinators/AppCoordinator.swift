@@ -8,13 +8,14 @@
 import UIKit
 
 //Point of entry
-protocol Coordinator {
+protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] { get }
     func start()
 }
 
 final class AppCoordinator: Coordinator {
 //MARK: - Private properties
+    
     private(set) var childCoordinators: [Coordinator] = []
     
     private let window: UIWindow
@@ -23,13 +24,13 @@ final class AppCoordinator: Coordinator {
         self.window = window
     }
  //MARK: - Methods
+    
     func start() {
         let navigationController = UINavigationController()
         
         let eventCoordinator = EventListCoordinator(navigationController: navigationController)
         
         childCoordinators.append(eventCoordinator)//Add coordinator list of events to list child coordinators
-        
         eventCoordinator.start()//Add to navigation stack root view controller
         
         window.rootViewController = navigationController
