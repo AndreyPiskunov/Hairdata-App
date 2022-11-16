@@ -8,6 +8,8 @@
 import UIKit
 
 final class AddEventCoordinator: Coordinator {
+    //MARK: - Properties
+    
     private(set) var childCoordinators: [Coordinator]  = []
     private let navigationController: UINavigationController
     
@@ -16,6 +18,7 @@ final class AddEventCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+    //MARK: - Methods
     
     func start() {
         let addEventViewController: AddEventViewController = .instantiate()
@@ -32,4 +35,3 @@ final class AddEventCoordinator: Coordinator {
         print ("deinit from add event coordinator")
     }
 }
-

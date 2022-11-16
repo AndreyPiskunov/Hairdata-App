@@ -9,17 +9,18 @@ import UIKit
 //import CoreData
 
 class EventListViewController: UIViewController {
+    //MARK: - Properties
     
     var viewModel: EventListViewModel!
-
-//MARK: - Lifecycle
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
     }
-//MARK: - Methods
-
+    //MARK: - Methods
+    
     private func setupViews() {
         let plusImage = UIImage(systemName: "plus.circle.fill")
         let barButtonItem = UIBarButtonItem(image: plusImage, style: .plain, target: self, action: #selector(tappedAddEventButton))

@@ -14,7 +14,7 @@ protocol Coordinator: AnyObject {
 }
 
 final class AppCoordinator: Coordinator {
-//MARK: - Private properties
+    //MARK: - Private properties
     
     private(set) var childCoordinators: [Coordinator] = []
     
@@ -23,7 +23,8 @@ final class AppCoordinator: Coordinator {
     init (window: UIWindow) {
         self.window = window
     }
- //MARK: - Methods
+    
+    //MARK: - Methods
     
     func start() {
         let navigationController = UINavigationController()

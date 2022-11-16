@@ -15,7 +15,7 @@ final class EventListCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
+    //MARK: - Methods
     func start() {
         let eventListViewController: EventListViewController = .instantiate()
         let eventListViewModel = EventListViewModel()
