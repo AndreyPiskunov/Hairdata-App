@@ -17,4 +17,8 @@ final class TitleSubtitleCellViewModel {
         self.subtitle = subtitle
         self.placeholder = placeholder
     }
+    
+    func update(_ subtitle: String) {
+        self.subtitle = subtitle
+    }
 }

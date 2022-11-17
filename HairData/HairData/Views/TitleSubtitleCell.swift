@@ -9,8 +9,9 @@ import UIKit
 
 final class TitleSubtitleCell: UITableViewCell {
     private let titleLabel = UILabel()
-    private let subtitleTextField = UITextField()
+    let subtitleTextField = UITextField()
     private let verticalStackView = UIStackView()
+    private let indents: CGFloat = 20
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,6 +36,10 @@ final class TitleSubtitleCell: UITableViewCell {
         verticalStackView.axis = .vertical
         titleLabel.font = .systemFont(ofSize: 22, weight: .medium)
         subtitleTextField.font = .systemFont(ofSize: 20, weight: .medium)
+        
+        [verticalStackView, titleLabel, subtitleTextField].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }//converting dimensions into constraints
     }
     
     func setupHierarchy() {
@@ -46,10 +51,10 @@ final class TitleSubtitleCell: UITableViewCell {
     
     func setupLayout(){
         NSLayoutConstraint.activate([
-            verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            verticalStackView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            verticalStackView.rightAnchor.constraint(equalTo: contentView.rightAnchor)
+            verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: indents),
+            verticalStackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: indents),
+            verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -indents),
+            verticalStackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: indents)
         ])
     }
 }

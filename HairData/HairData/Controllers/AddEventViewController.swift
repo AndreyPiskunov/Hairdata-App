@@ -18,14 +18,31 @@ class AddEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        
+        viewModel.onUpdate = { [weak self] in
+            self?.tableView.reloadData()
+        }
+        viewModel.viewDidLoad()
+        setupViews()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         viewModel.viewDidDisappear()
+    }
+    
+    @objc private func tappedDone() {
+        viewModel.tappedDone()
+    }
+    
+    private func setupViews() {
+        tableView.dataSource = self
+        tableView.register(TitleSubtitleCell.self, forCellReuseIdentifier: "TitleSubtitleCell")//register cell
+        tableView.tableFooterView = UIView()
+        navigationItem.title = viewModel.mainTitle
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
+        navigationController?.navigationBar.tintColor = .black
     }
 }
 
@@ -43,9 +60,23 @@ extension AddEventViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TitleSubtitleCell", for: indexPath)
             as! TitleSubtitleCell
             cell.update(with: titleSubtitleViewModel)
+            cell.subtitleTextField.delegate = self
             return cell
         case .titleImage:
             return UITableViewCell()
         }
+    }
+}
+
+extension AddEventViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let currentText = textField.text else { return false }
+        let text = currentText + string
+        
+        let point = textField.convert(textField.bounds.origin, to: tableView)
+        if let indexPath = tableView.indexPathForRow(at: point) {
+            viewModel.updateCell(indexPath: indexPath, subtitle: text)
+        }
+        return true
     }
 }
