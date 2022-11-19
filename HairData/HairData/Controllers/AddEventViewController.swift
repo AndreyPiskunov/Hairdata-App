@@ -37,6 +37,7 @@ class AddEventViewController: UIViewController {
     
     private func setupViews() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(TitleSubtitleCell.self, forCellReuseIdentifier: "TitleSubtitleCell")//register cell
         tableView.tableFooterView = UIView()
         navigationItem.title = viewModel.mainTitle
@@ -66,6 +67,14 @@ extension AddEventViewController: UITableViewDataSource {
     }
 }
 
+extension AddEventViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        viewModel.didSelectRow(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+    }
+}
+
 extension AddEventViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let currentText = textField.text else { return false }
@@ -78,3 +87,4 @@ extension AddEventViewController: UITextFieldDelegate {
         return true
     }
 }
+
