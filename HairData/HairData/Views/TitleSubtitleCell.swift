@@ -8,6 +8,7 @@
 import UIKit
 
 final class TitleSubtitleCell: UITableViewCell {
+    //MARK: - Properties
     
     private let titleLabel = UILabel()
     let subtitleTextField = UITextField()
@@ -32,6 +33,7 @@ final class TitleSubtitleCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    //MARK: - Methods
     
     func update(with viewModel: TitleSubtitleCellViewModel) {
         self.viewModel = viewModel
