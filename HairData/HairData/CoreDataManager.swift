@@ -9,6 +9,9 @@ import CoreData
 import UIKit
 
 final class CoreDataManager {
+    
+    static let shared = CoreDataManager()
+    
     var persistentContainer: NSPersistentContainer = {
         let persistentContainer = NSPersistentContainer(name: "WorkEventsData")
         persistentContainer.loadPersistentStores { _, error in
