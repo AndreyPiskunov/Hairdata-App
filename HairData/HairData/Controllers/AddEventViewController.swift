@@ -17,12 +17,13 @@ class AddEventViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         
         viewModel.onUpdate = { [weak self] in
             self?.tableView.reloadData()
         }
         viewModel.viewDidLoad()
-        setupViews()
+       
     }
     
     override func viewDidDisappear(_ animated: Bool) {

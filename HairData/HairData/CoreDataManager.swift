@@ -11,6 +11,7 @@ import UIKit
 final class CoreDataManager {
     
     static let shared = CoreDataManager()
+    private init() {}
     
     var persistentContainer: NSPersistentContainer = {
         let persistentContainer = NSPersistentContainer(name: "WorkEventsData")
@@ -27,7 +28,10 @@ final class CoreDataManager {
     func saveEvent(name: String, date: Date, image: UIImage) {
         let event = Event(context: moc)
         event.setValue(name, forKey: "name")
-        let imageData = image.jpegData(compressionQuality: 1)
+        
+        let resizeImage = image.sameAspectRatio(newHeight: 250)
+        
+        let imageData = resizeImage.jpegData(compressionQuality: 1)
         event.setValue(imageData, forKey: "image")
         event.setValue(date, forKey: "date")
         

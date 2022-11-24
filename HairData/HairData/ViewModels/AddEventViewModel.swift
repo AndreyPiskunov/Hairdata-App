@@ -10,14 +10,14 @@ import UIKit
 final class AddEventViewModel {
     
     let mainTitle = "Add"
-    var onUpdate:() -> Void = {}
+    var onUpdate: () -> Void = {}
     
     enum Cell {
         case titleSubtitle (TitleSubtitleCellViewModel)
     }
     
-    private(set) var cells: [AddEventViewModel.Cell] = []
-    var coordinator: AddEventCoordinator?
+    private(set) var cells: [Cell] = []
+    weak var coordinator: AddEventCoordinator?
     
     private var nameCellViewModel: TitleSubtitleCellViewModel?
     private var dateCellViewModel: TitleSubtitleCellViewModel?
@@ -31,7 +31,7 @@ final class AddEventViewModel {
         return dateFormatter
     }()
     
-    init(cellBuilder: EventsCellBuilder, coreDataManager: CoreDataManager) {
+    init(cellBuilder: EventsCellBuilder, coreDataManager: CoreDataManager = CoreDataManager.shared) {
         self.cellBuilder = cellBuilder
         self.coreDataManager = coreDataManager
     }
