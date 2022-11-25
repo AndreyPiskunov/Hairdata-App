@@ -10,6 +10,8 @@
 		CE32C284292A140500D8598A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C283292A140500D8598A /* UIView+Extensions.swift */; };
 		CE32C286292D0E9600D8598A /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C285292D0E9600D8598A /* Date+Extensions.swift */; };
 		CE55B2F2292E9F2B0036FC90 /* EventDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55B2F1292E9F2B0036FC90 /* EventDetailCoordinator.swift */; };
+		CE55B2F4292FE3500036FC90 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55B2F3292FE3500036FC90 /* EventDetailViewController.swift */; };
+		CE55B2F6292FE5540036FC90 /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55B2F5292FE5540036FC90 /* EventDetailViewModel.swift */; };
 		CE82821F29222BD1008D41F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82821E29222BD1008D41F2 /* AppDelegate.swift */; };
 		CE82822129222BD1008D41F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82822029222BD1008D41F2 /* SceneDelegate.swift */; };
 		CE82822629222BD1008D41F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE82822429222BD1008D41F2 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		CE32C283292A140500D8598A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CE32C285292D0E9600D8598A /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		CE55B2F1292E9F2B0036FC90 /* EventDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCoordinator.swift; sourceTree = "<group>"; };
+		CE55B2F3292FE3500036FC90 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		CE55B2F5292FE5540036FC90 /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
 		CE82821B29222BD1008D41F2 /* HairData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HairData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE82821E29222BD1008D41F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE82822029222BD1008D41F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			children = (
 				CE82823829223662008D41F2 /* EventListViewController.swift */,
 				CE8282472923A0AB008D41F2 /* AddEventViewController.swift */,
+				CE55B2F3292FE3500036FC90 /* EventDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 				CE82824C2923A418008D41F2 /* AddEventViewModel.swift */,
 				CE82824F29255B38008D41F2 /* TitleSubtitleCellViewModel.swift */,
 				CEA4469F292A035900FF75FE /* EventCellViewModel.swift */,
+				CE55B2F5292FE5540036FC90 /* EventDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 				CE55B2F2292E9F2B0036FC90 /* EventDetailCoordinator.swift in Sources */,
 				CE32C284292A140500D8598A /* UIView+Extensions.swift in Sources */,
 				CE82824029225A90008D41F2 /* WorkEventsData.xcdatamodeld in Sources */,
+				CE55B2F4292FE3500036FC90 /* EventDetailViewController.swift in Sources */,
 				CE82823B29224349008D41F2 /* AppColors+Extensions.swift in Sources */,
 				CE82824D2923A418008D41F2 /* AddEventViewModel.swift in Sources */,
 				CE82823929223662008D41F2 /* EventListViewController.swift in Sources */,
@@ -256,6 +263,7 @@
 				CE828244292287E7008D41F2 /* EventListViewModel.swift in Sources */,
 				CEC0D813292E29470001CB8D /* UIImage+Extensions.swift in Sources */,
 				CE89A9312927BF7300A49F29 /* ImagePickerCoordinator.swift in Sources */,
+				CE55B2F6292FE5540036FC90 /* EventDetailViewModel.swift in Sources */,
 				CEA446A0292A035900FF75FE /* EventCellViewModel.swift in Sources */,
 				CE89A93329291C2200A49F29 /* EventsCellBuilder.swift in Sources */,
 				CE82825329255C19008D41F2 /* TitleSubtitleCell.swift in Sources */,

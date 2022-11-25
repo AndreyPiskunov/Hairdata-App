@@ -69,6 +69,35 @@
             </objects>
             <point key="canvasLocation" x="1020" y="4"/>
         </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="YN2-4k-J2x">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mAU-Li-3Ud" customClass="EventDetailViewController" customModule="HairData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hR3-hR-dpj">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GIj-8W-6br">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UxS-Ff-0gl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UxS-Ff-0gl" firstAttribute="trailing" secondItem="GIj-8W-6br" secondAttribute="trailing" id="26F-oa-SRW"/>
+                            <constraint firstItem="GIj-8W-6br" firstAttribute="leading" secondItem="UxS-Ff-0gl" secondAttribute="leading" id="3Th-Dj-I6D"/>
+                            <constraint firstItem="UxS-Ff-0gl" firstAttribute="bottom" secondItem="GIj-8W-6br" secondAttribute="bottom" id="fpH-x5-tzz"/>
+                            <constraint firstItem="GIj-8W-6br" firstAttribute="top" secondItem="UxS-Ff-0gl" secondAttribute="top" id="muM-yW-0Ou"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="GIj-8W-6br" id="pzh-YC-BVk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqM-KM-9Yr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928" y="13"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
