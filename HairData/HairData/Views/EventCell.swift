@@ -9,7 +9,7 @@ import UIKit
 
 final class EventCell: UITableViewCell {
     
-    private let timeRemainingLabels = [UILabel(), UILabel(), UILabel(), UILabel()]
+//    private let timeRemainingLabels = [UILabel(), UILabel(), UILabel(), UILabel()]
     private let dateLabel = UILabel()
     private let nameEventLabel = UILabel()
     private let eventImageView = UIImageView()
@@ -28,14 +28,15 @@ final class EventCell: UITableViewCell {
     }
     
     private func setupViews(){
-        (timeRemainingLabels + [dateLabel, nameEventLabel, eventImageView, verticalStackView]).forEach {
+//        (timeRemainingLabels +
+         [dateLabel, nameEventLabel, eventImageView, verticalStackView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        timeRemainingLabels.forEach {
-            $0.font = .systemFont(ofSize: 25, weight: .medium)
-            $0.textColor = .white
-        }
+//        timeRemainingLabels.forEach {
+//            $0.font = .systemFont(ofSize: 25, weight: .medium)
+//            $0.textColor = .white
+//        }
         
         dateLabel.font = .systemFont(ofSize: 20, weight: .medium)
         dateLabel.textColor = .white
@@ -52,9 +53,9 @@ final class EventCell: UITableViewCell {
         contentView.addSubview(verticalStackView)
         contentView.addSubview(nameEventLabel)
         
-        timeRemainingLabels.forEach {
-            verticalStackView.addArrangedSubview($0)
-        }
+//        timeRemainingLabels.forEach {
+//            verticalStackView.addArrangedSubview($0)
+//        }
         
         verticalStackView.addArrangedSubview(UIView())
         verticalStackView.addArrangedSubview(dateLabel)
@@ -66,18 +67,18 @@ final class EventCell: UITableViewCell {
         bottomConstraint.priority = .required - 1
         bottomConstraint.isActive = true
         
-        eventImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+//        eventImageView.heightAnchor.
         verticalStackView.pinToSuperViewEdges([.top, .right, .bottom], constant: 15)
         nameEventLabel.pinToSuperViewEdges([.bottom, .left], constant: 15)
     }
         
     func update(with viewModel: EventCellViewModel) {
-        timeRemainingLabels.forEach {
-            $0.text = ""
-        }
-        viewModel.timeRemainingStrings.enumerated().forEach {
-            timeRemainingLabels[$0.offset].text = $0.element
-        }
+//        timeRemainingLabels.forEach {
+//            $0.text = ""
+//        }
+//        viewModel.timeRemainingStrings.enumerated().forEach {
+//            timeRemainingLabels[$0.offset].text = $0.element
+//        }
         
         dateLabel.text = viewModel.dateText
         nameEventLabel.text = viewModel.nameEventText

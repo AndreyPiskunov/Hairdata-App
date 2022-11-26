@@ -167,8 +167,8 @@
 		CE82825129255BC1008D41F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE82825229255C19008D41F2 /* TitleSubtitleCell.swift */,
 				CEA446A1292A089500FF75FE /* EventCell.swift */,
+				CE82825229255C19008D41F2 /* TitleSubtitleCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

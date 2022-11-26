@@ -40,6 +40,7 @@ class EventListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(EventCell.self, forCellReuseIdentifier: "EventCell")
+
     }
     
     @objc private func tappedAddEventButton() {
@@ -61,7 +62,11 @@ extension EventListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows()
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAtindexPath indexPath: IndexPath
+    ) -> CGFloat {
+        return 600
+    }
 }
 
 extension EventListViewController: UITableViewDelegate {

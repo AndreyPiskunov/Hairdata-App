@@ -26,7 +26,7 @@ struct EventCellViewModel {
     var dateText: String? {
         guard let eventDate = event.date else { return nil }
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMM yyyy"
+        dateFormatter.dateFormat = "d MMM yy"
         return dateFormatter.string(from: eventDate)
     }
     
